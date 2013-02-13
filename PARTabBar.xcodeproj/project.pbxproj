@@ -50,6 +50,7 @@
 		A0EB440016CBFF1800043896 /* share_normal_black.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EB43FE16CBFF1800043896 /* share_normal_black.png */; };
 		A0EB440316CBFF1E00043896 /* share_active_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EB440116CBFF1E00043896 /* share_active_black@2x.png */; };
 		A0EB440416CBFF1E00043896 /* share_normal_black@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A0EB440216CBFF1E00043896 /* share_normal_black@2x.png */; };
+		A0EB440716CBFF8000043896 /* PARTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A0EB440616CBFF8000043896 /* PARTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +102,8 @@
 		A0EB43FE16CBFF1800043896 /* share_normal_black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = share_normal_black.png; sourceTree = "<group>"; };
 		A0EB440116CBFF1E00043896 /* share_active_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_active_black@2x.png"; sourceTree = "<group>"; };
 		A0EB440216CBFF1E00043896 /* share_normal_black@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "share_normal_black@2x.png"; sourceTree = "<group>"; };
+		A0EB440516CBFF8000043896 /* PARTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PARTabBar.h; sourceTree = "<group>"; };
+		A0EB440616CBFF8000043896 /* PARTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PARTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,8 @@
 		A0EB43BD16CBFD5100043896 /* Tab Bar */ = {
 			isa = PBXGroup;
 			children = (
+				A0EB440516CBFF8000043896 /* PARTabBar.h */,
+				A0EB440616CBFF8000043896 /* PARTabBar.m */,
 			);
 			name = "Tab Bar";
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 				A0EB43A316CBFCF100043896 /* main.m in Sources */,
 				A0EB43A716CBFCF100043896 /* PARAppDelegate.m in Sources */,
 				A0EB43B016CBFCF100043896 /* PARViewController.m in Sources */,
+				A0EB440716CBFF8000043896 /* PARTabBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
