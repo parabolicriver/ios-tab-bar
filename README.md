@@ -2,4 +2,4 @@ A tab bar for ready made images. Simple dump in your normal tab and active tab i
 
 Feel free to use anything as you see fit. Attribution while nice isn't needed. 
 
-![Sample Screenshot](https://github.com/parabolicriver/ios-tab-bar/blob/master/screenshot.png "iPad Simulator with sample iPad and iPhone tab bar")
+![Sample Screenshot](https://raw.github.com/parabolicriver/ios-tab-bar/master/screenshot.png "iPad Simulator with sample iPad and iPhone tab bar")
