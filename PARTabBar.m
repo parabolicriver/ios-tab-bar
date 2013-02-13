@@ -172,4 +172,30 @@
     } // invalid data
 } // layout subviews
 
+#pragma mark - Gesture Handling
+
+- (void)viewTapped:(id)sender
+{
+    PARTaggedTapGestureRecognizer *ttgr = (PARTaggedTapGestureRecognizer *) sender;
+    
+    // selection
+    int selectedTab = ttgr.tag;
+    
+    // ignore re-selections
+    if (self.selectedIndex != selectedTab)
+    {
+        // update selection
+        self.selectedIndex = selectedTab;
+        
+        // redraw
+        [self setNeedsLayout];
+        
+        // tell the delegate
+        if (self.delegate && [self.delegate respondsToSelector:@selector(tabBar:didSelectItemIndex:)])
+        {
+            [self.delegate tabBar:self didSelectItemIndex:self.selectedIndex];
+        }
+    }
+}
+
 @end
