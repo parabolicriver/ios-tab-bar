@@ -28,7 +28,7 @@
 
     // iPad size tab bar
     PARTabBar *iPadTabBar = [[PARTabBar alloc] init];
-    iPadTabBar.frame = CGRectMake(0, 0, kiPadTabBarWidth, kiPadTabBarHeight);
+    iPadTabBar.frame = CGRectMake(0, 20, kiPadTabBarWidth, kiPadTabBarHeight);
     iPadTabBar.delegate = self;
     
     // settings and about tabs are wider and come
@@ -51,6 +51,28 @@
     [self.view addSubview:iPadTabBar];
     
     // iPhone size tab bar
+    PARTabBar *iPhoneTabBar = [[PARTabBar alloc] init];
+    iPhoneTabBar.frame = CGRectMake(0, 100, kiPhoneTabBarWidth, kiPhoneTabBarHeight);
+    iPhoneTabBar.delegate = self;
+    
+    // since the iPhone tab widths are all
+    // the same placing them in a different
+    // order from the iPad version
+    aboutTabImage = [UIImage imageNamed:@"about_normal_black"];
+    aboutTabImageActive = [UIImage imageNamed:@"about_active_black"];
+    planTabImage = [UIImage imageNamed:@"plan_normal_black"];
+    planTabImageActive = [UIImage imageNamed:@"plan_active_black"];
+    settingsTabImage = [UIImage imageNamed:@"settings_normal_black"];
+    settingsTabImageActive = [UIImage imageNamed:@"settings_active_black"];
+    shareTabImage = [UIImage imageNamed:@"share_normal_black"];
+    shareTabImageActive = [UIImage imageNamed:@"share_active_black"];
+    
+    iPhoneTabBar.normalImages = [NSArray arrayWithObjects:aboutTabImage, planTabImage, settingsTabImage, shareTabImage, nil];
+    iPhoneTabBar.activeImages = [NSArray arrayWithObjects:aboutTabImageActive, planTabImageActive, settingsTabImageActive, shareTabImageActive, nil];
+    
+    //iPhoneTabBar.initiallySelectedIndex = 1;
+    
+    [self.view addSubview:iPhoneTabBar];
 }
 
 - (void)didReceiveMemoryWarning
