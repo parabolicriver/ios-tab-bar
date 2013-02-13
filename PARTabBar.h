@@ -28,11 +28,14 @@
 @interface PARTabBar : UIView
 
 @property (nonatomic, assign) id<PARTabBarDelegate> delegate;
-// the count should be the same, and the image
+
+// the counts should be the same, and the image
 // frames should add up to the tab bar frame,
 // else it explodes
 @property (nonatomic, strong) NSArray *normalImages;
 @property (nonatomic, strong) NSArray *activeImages;
+
+// select this tab initially
 @property (nonatomic, assign) NSUInteger initiallySelectedIndex;
 
 @end

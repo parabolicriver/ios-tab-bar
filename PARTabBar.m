@@ -8,6 +8,32 @@
 
 #import "PARTabBar.h"
 
+#define kDefaultInvalidSelectedIndex    -1
+#define kDefaultValidSelectedIndex       0
+
+#define kDefaultTag                      0
+
+@interface PARTaggedTapGestureRecognizer : UITapGestureRecognizer
+
+@property (nonatomic, assign) NSUInteger tag;
+
+@end
+
+@implementation PARTaggedTapGestureRecognizer
+
+- (id)initWithTarget:(id)target action:(SEL)action
+{
+    self = [super initWithTarget:target action:action];
+    if (self)
+    {
+        _tag = kDefaultTag;
+    }
+    
+    return self;
+}
+
+@end
+
 @implementation PARTabBar
 
 - (id)initWithFrame:(CGRect)frame
