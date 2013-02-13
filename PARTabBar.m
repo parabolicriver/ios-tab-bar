@@ -118,7 +118,7 @@
                 // setup on screen tab visuals
                 UIImageView *iv = [[UIImageView alloc] init];
                 CGFloat x = 0.0f;
-                for (int j = 0; j < i; i++)
+                for (int j = 0; j < i; j++)
                 {
                     x += ((NSNumber *) [tabWidths objectAtIndex:j]).doubleValue;
                 }
