@@ -12,12 +12,12 @@
 
 @protocol PARTabBarDelegate <NSObject>
 
-// required cause otherwise its kind of useless
-@required
+@optional
 
 // The user changed to a tab with index. Only
 // called if the new selection is different from
-// the current one.
+// the current one. It is also called the first
+// time the tab bar comes up on screen.
 - (void)tabBar:(PARTabBar *)tabBar didSelectItemIndex:(NSUInteger)itemIndex;
 
 @end
