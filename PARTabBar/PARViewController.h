@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PARTabBar.h"
 
-@interface PARViewController : UIViewController
+@interface PARViewController : UIViewController <PARTabBarDelegate>
 
 @end
