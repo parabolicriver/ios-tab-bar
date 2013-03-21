@@ -184,6 +184,18 @@
     // ignore re-selections
     if (self.selectedIndex != selectedTab)
     {
+        // check if should select is implemented
+        if (self.delegate && [self.delegate respondsToSelector:@selector(tabBar:shouldSelectItemIndex:)])
+        {
+            // can we go ahead with the tab
+            // change ?
+            BOOL allowTabChange = [self.delegate tabBar:self shouldSelectItemIndex:selectedTab];
+            if (!allowTabChange)
+            {
+                return;
+            }
+        }
+        
         // update selection
         self.selectedIndex = selectedTab;
         
@@ -191,6 +203,35 @@
         [self setNeedsLayout];
         
         // tell the delegate
+        if (self.delegate && [self.delegate respondsToSelector:@selector(tabBar:didSelectItemIndex:)])
+        {
+            [self.delegate tabBar:self didSelectItemIndex:self.selectedIndex];
+        }
+    }
+}
+
+#pragma mark - Tab Bar Helpers
+
+- (void)selectItemIndex:(NSUInteger)itemIndex
+{
+    // selection validity
+    int selectedTab = itemIndex;
+    int nTabs = self.normalImages.count;
+    if (selectedTab >= nTabs)
+    {
+        return; // invalid index
+    }
+    
+    // ignore re-selections
+    if (self.selectedIndex != selectedTab)
+    {
+        // update selection
+        self.selectedIndex = selectedTab;
+        
+        // redraw
+        [self setNeedsLayout];
+        
+        // tell delegate
         if (self.delegate && [self.delegate respondsToSelector:@selector(tabBar:didSelectItemIndex:)])
         {
             [self.delegate tabBar:self didSelectItemIndex:self.selectedIndex];

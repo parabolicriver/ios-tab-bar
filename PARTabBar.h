@@ -20,6 +20,13 @@
 // time the tab bar comes up on screen.
 - (void)tabBar:(PARTabBar *)tabBar didSelectItemIndex:(NSUInteger)itemIndex;
 
+// If implemented will pause switching tabs
+// if you return NO and then you can change
+// tabs manually after an alert view returns
+// for example. Return YES to change tabs
+// immediately.
+- (BOOL)tabBar:(PARTabBar *)tabBar shouldSelectItemIndex:(NSUInteger)itemIndex;
+
 @end
 
 // A custom tab bar for ready made tabs. Useful
@@ -37,5 +44,10 @@
 
 // select this tab initially
 @property (nonatomic, assign) NSUInteger initiallySelectedIndex;
+
+// manually change tabs, does 'not' call
+// tabBar:shouldSelectItemIndex; ignores
+// re-selections
+- (void)selectItemIndex:(NSUInteger)itemIndex;
 
 @end
