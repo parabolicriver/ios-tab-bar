@@ -62,6 +62,11 @@
     return self;
 }
 
+- (id)init
+{
+    return [self initWithFrame:CGRectZero];
+}
+
 #pragma mark - Layout and Drawing
 
 // Layout the tabs.
